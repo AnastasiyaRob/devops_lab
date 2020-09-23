@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import psutil
 import time
 import json
@@ -29,9 +30,10 @@ class ResourcesMonitor:
             with open("resources.json", 'a') as file:
                 file.write(y)
         else:
-             with open("resources.txt", 'a') as file:
+            with open("resources.txt", 'a') as file:
                 file.write("Snapshot" + str(self.snapshot) + " ") \
-                      + file.write(str(datetime.now()) + " " + "cpu:" + str(cpu)) \
+                      + file.write(str(datetime.now())) \
+                      + file.write(" " + "cpu:" + str(cpu)) \
                       + file.write(" " + "memory:" + memory[2] + " ") \
                       + file.write("swap:" + swap[3] + "\n")
 

@@ -5,7 +5,7 @@ import argparse
 from datetime import datetime
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-i", help="Interval between snapshots", type=int, default=30)
+parser.add_argument("-i", help="Interval", type=int, default=30)
 parser.add_argument("-t", help="Output file type", default="txt")
 args = parser.parse_args()
 
@@ -29,9 +29,11 @@ class ResourcesMonitor:
             with open("resources.json", 'a') as file:
                 file.write(y)
         else:
-            with open("resources.txt", 'a') as file:
-                file.write("Snapshot"+str(self.snapshot)+" "+str(datetime.now())+" " + "cpu:"+str(cpu)+" "+"memory:") \
-                      + file.write(memory[2]+" "+"swap:"+swap[3]+"\n")
+             with open("resources.txt", 'a') as file:
+                file.write("Snapshot" + str(self.snapshot) + " ") \
+                      + file.write(str(datetime.now()) + " " + "cpu:" + str(cpu)) \
+                      + file.write(" " + "memory:" + memory[2] + " ") \
+                      + file.write("swap:" + swap[3] + "\n")
 
 
 def main():

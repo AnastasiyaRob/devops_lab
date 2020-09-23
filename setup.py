@@ -5,7 +5,7 @@ setup(
     packages=find_packages(),
     entry_points={
         "console_scripts": [
-             "monitor = monitor.task3:main",
+            "monitor = monitor.task3:main",
         ],
     },
     install_requires=[

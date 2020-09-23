@@ -20,7 +20,7 @@ class ResourcesMonitor:
         cpu = psutil.cpu_percent()
         memory = list(map(str, str(psutil.virtual_memory()).split(",")))
         swap = list(map(str, str(psutil.swap_memory()).split(",")))
-        list1 = ["Snapshot"+str(self.snapshot), "cpu", "memory", " swap"]
+        list1 = ["Snapshot" + str(self.snapshot), "cpu", "memory", " swap"]
         list2 = [str(datetime.now()), cpu, memory[2], swap[3]]
         dict1 = {}
         for i in range(0, len(list1)):
@@ -32,10 +32,10 @@ class ResourcesMonitor:
         else:
             with open("resources.txt", 'a') as file:
                 file.write("Snapshot" + str(self.snapshot) + " ") \
-                      + file.write(str(datetime.now())) \
-                      + file.write(" " + "cpu:" + str(cpu)) \
-                      + file.write(" " + "memory:" + memory[2] + " ") \
-                      + file.write("swap:" + swap[3] + "\n")
+                    + file.write(str(datetime.now())) \
+                    + file.write(" " + "cpu:" + str(cpu)) \
+                    + file.write(" " + "memory:" + memory[2] + " ") \
+                    + file.write("swap:" + swap[3] + "\n")
 
 
 def main():

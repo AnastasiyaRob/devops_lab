@@ -1,10 +1,12 @@
 apache_vhosts:
 - ip_address: "*"
+  port: "80"
   servername: "www.domain1.com"
   documentroot: "/www/domain1"
   serveradmin: "www-admin@domain1.com"
   directorypath: '"/usr/local/httpd/htdocs"'
 - ip_address: "*"
+  port: "80"
   servername: "www.domain2.com"
   documentroot: "/www/domain2"
   serveradmin: "www-admin@domain2.com"
